@@ -1,8 +1,6 @@
 # dotfiles
 ---
 
-My minimum dotfiles.
-
 - emacs
 - zshrc
 - bash
