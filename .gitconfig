@@ -1,0 +1,12 @@
+[user]
+	name = Ryuichi Yamamoto
+	email = zryuichi@gmail.com
+[core]
+	editor = emacs -nw
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	df = diff
+	lg = log -p

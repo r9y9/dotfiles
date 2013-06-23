@@ -1,0 +1,12 @@
+# .zshrh.mac
+# environment specific defenition
+# Mac OS X 10.7 Lion 20110907 Ryuichi Yamamoto
+#
+
+# aliases
+alias aquaemacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+
+# path
+export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
+export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
