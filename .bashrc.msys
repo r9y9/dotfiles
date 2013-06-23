@@ -1,0 +1,13 @@
+# bashrc for mingw on windows 7 
+
+# emacs 
+PATH="$PATH:/c/src/emacs-24.3/bin/"
+
+# sublime 
+PATH="$PATH:/c/Program Files/Sublime Text 2/"
+
+# git
+PATH="$PATH:/c/Program Files (x86)/Git/bin/"
+
+alias emacs="runemacs.exe"
+alias sublime="sublime_text.exe"

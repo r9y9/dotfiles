@@ -189,6 +189,6 @@ alias su="su -l"
 case "${OSTYPE}" in
 # mac
 darwin*)
-    [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mac
+    [ -f ${HOME}/.zshrc.mac ] && source ${HOME}/.zshrc.mac
     ;;
 esac

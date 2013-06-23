@@ -107,3 +107,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+## load environmental .bashrc configuration file
+case "${OSTYPE}" in
+# mac
+msys*)
+    [ -f ${HOME}/.bashrc.msys ] && source ${HOME}/.bashrc.msys
+    ;;
+esac
