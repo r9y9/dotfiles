@@ -57,6 +57,11 @@ bindkey "\\en" history-beginning-search-forward-end
 # reverse menu completion binded to Shift-Tab
 bindkey "\e[Z" reverse-menu-complete
 
+# emacs-like forward/backward word with ctrl+left/right
+bindkey '5D' emacs-backward-word
+bindkey '5C' emacs-forward-word
+export WORDCHARS=""
+
 ## command history configuration
 HISTFILE=${HOME}/.zsh_history
 HISTSIZE=50000
