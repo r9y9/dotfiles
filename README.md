@@ -1,7 +1,7 @@
 # dotfiles
 ---
 
-- emacs
+- emacs (>24)
 - zshrc
 - bash
 - git
