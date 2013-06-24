@@ -130,7 +130,7 @@ colors
 
 # set vcs (version control systems) info
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 precmd () {
     psvar=()
