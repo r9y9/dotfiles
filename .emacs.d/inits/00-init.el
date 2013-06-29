@@ -15,3 +15,6 @@
 (global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "<f10>") 'list-packages)
 
+;; linum-mode
+(global-linum-mode 1)
+(setq linum-format "%4d  ")
