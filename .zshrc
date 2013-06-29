@@ -189,6 +189,7 @@ alias du="du -h"
 alias df="df -h"
 alias rm="rm -i"
 alias su="su -l"
+alias apd="sudo apt-get update && sudo apt-get upgrade -y"
 
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
