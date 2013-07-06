@@ -2,8 +2,8 @@
 ;; ubuntu:
 ;; $ sudo apt-get install emacs24
 
-;; Migu 1M
-(set-face-attribute 'default nil :family "Migu 1M" :height 110)
+;; Ricty
+(set-face-attribute 'default nil :family "Ricty" :height 105)
 
 ;; package control
 (require 'package)
@@ -17,4 +17,4 @@
 
 ;; linum-mode
 (global-linum-mode 1)
-(setq linum-format "%4d  ")
+(setq linum-format "%4d ")

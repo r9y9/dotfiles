@@ -189,12 +189,14 @@ alias du="du -h"
 alias df="df -h"
 alias rm="rm -i"
 alias su="su -l"
-alias apd="sudo apt-get update && sudo apt-get upgrade -y"
 
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
 # mac
 darwin*)
-    [ -f ${HOME}/.zshrc.mac ] && source ${HOME}/.zshrc.mac
+    [ -f ${HOME}/.zsh.d/zshrc.mac ] && source ${HOME}/.zsh.d/zshrc.mac
+    ;;
+linux*)
+    [ -f ${HOME}/.zsh.d/zshrc.linux ] && source ${HOME}/.zsh.d/zshrc.linux
     ;;
 esac

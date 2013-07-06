@@ -1,0 +1,4 @@
+# .zshrh.linux
+
+alias apd="sudo apt-get update && sudo apt-get upgrade -y"
+alias open="xdg-open"
