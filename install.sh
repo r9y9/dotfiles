@@ -1,25 +1,31 @@
 #!/bin/bash
 
+files=(
+    ".bash_profile"
+    ".bashrc"
+    ".bashrc.msys"
+    ".emacs"
+    ".emacs.d"
+    ".gitconfig"
+    ".hgrc"
+    ".tmux.conf"
+    ".tmux.d"
+    ".zsh.d"
+    ".zshrc"
+)
+
 function replace_dotfiles() {
     # cleaning
-    for file in .*
+    for file in ${files[@]}
     do
-	if [ $file = "." -o $file = ".." -o $file = ".git" -o $file = ".gitignore" ]
-	then
-	    continue
-	fi
 	if [ -e $HOME/$file ]
 	then
 	    rm -rf $HOME/$file
 	fi
     done
     # replace files with symbolic link
-    for file in .*
+    for file in ${files[@]}
     do
-	if [ $file = "." -o $file = ".." -o $file = ".git" -o $file = ".gitignore" ]
-	then
-	    continue
-	fi
 	ln -sv $PWD/$file $HOME/$file
     done
 }
