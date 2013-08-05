@@ -3,7 +3,7 @@
 ;; $ sudo apt-get install emacs24
 
 ;; Ricty
-(set-face-attribute 'default nil :family "Ricty" :height 105)
+(set-face-attribute 'default nil :family "Ricty" :height 100)
 
 ;; package control
 (require 'package)
