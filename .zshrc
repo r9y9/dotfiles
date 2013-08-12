@@ -187,7 +187,6 @@ alias ll="ls -la"
 alias  l="ls -l"
 alias du="du -h"
 alias df="df -h"
-alias rm="rm -i"
 alias su="su -l"
 
 ## load environmental .zshrc configuration file
