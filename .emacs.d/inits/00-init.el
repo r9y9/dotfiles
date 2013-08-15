@@ -2,7 +2,7 @@
 ;; ubuntu:
 ;; $ sudo apt-get install emacs24
 
-;; Ricty
+;; Default font 
 (set-face-attribute 'default nil :family "Ricty" :height 100)
 
 ;; package control
