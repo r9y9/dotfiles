@@ -85,7 +85,7 @@ alias ll="ls -la"
 alias  l="ls -l"
 alias du="du -h"
 alias df="df -h"
-alias rm="rm -i"
+# alias rm="rm -i"
 alias su="su -l"
 
 # Add an "alert" alias for long running commands.  Use like so:
