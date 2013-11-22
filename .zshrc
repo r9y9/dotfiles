@@ -12,6 +12,7 @@ esac
 # PATH
 export PATH="${HOME}/bin:${PATH}"
 #export PATH="${HOME}/.cabal/bin:${PATH}"
+export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
 ## additional userful functions
 # auto change directory

@@ -1,3 +1,5 @@
+(set-face-attribute 'default nil :family "Ricty" :height 90)
+
 ;; auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
