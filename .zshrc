@@ -200,3 +200,6 @@ linux*)
     [ -f ${HOME}/.zsh.d/zshrc.linux ] && source ${HOME}/.zsh.d/zshrc.linux
     ;;
 esac
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
