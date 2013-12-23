@@ -3,7 +3,7 @@
 ;; $ sudo apt-get install emacs24
 
 ;; Default font 
-(set-face-attribute 'default nil :family "Ricty" :height 100)
+(set-face-attribute 'default nil :family "Ricty" :height 105)
 
 ;; package control
 (require 'package)
