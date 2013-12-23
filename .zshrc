@@ -11,8 +11,16 @@ esac
 
 # PATH
 export PATH="${HOME}/bin:${PATH}"
-#export PATH="${HOME}/.cabal/bin:${PATH}"
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+
+# SPTK
+export PATH="/usr/local/SPTK/bin:${PATH}"
+
+# Go
+export PATH="/usr/local/go/bin:${PATH}"
+
+# Haskell
+#export PATH="${HOME}/.cabal/bin:${PATH}"
 
 ## additional userful functions
 # auto change directory
