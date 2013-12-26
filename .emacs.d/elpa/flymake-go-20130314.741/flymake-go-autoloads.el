@@ -3,8 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads nil nil ("flymake-go-pkg.el" "flymake-go.el") (21179
-;;;;;;  39795 774113 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/flymake-go-20130314.741/flymake-go-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flymake-go-20130314.741/flymake-go.el")
+;;;;;;  (21179 52928 780857 0))
 
 ;;;***
 
