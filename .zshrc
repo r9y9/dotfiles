@@ -9,18 +9,22 @@ case ${UID} in
     ;;
 esac
 
-# PATH
-export PATH="${HOME}/bin:${PATH}"
-export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+# Local path settings
+export PATH="$PATH:$HOME/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 
-# SPTK
-export PATH="/usr/local/SPTK/bin:${PATH}"
+# SPTK speech signal processing toolkit
+export PATH="$PATH:/usr/local/SPTK/bin"
 
 # Go
-export PATH="/usr/local/go/bin:${PATH}"
+export PATH="$PATH:/usr/local/go/bin"
+
+# Go workspace settings
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # Haskell
-#export PATH="${HOME}/.cabal/bin:${PATH}"
+export PATH="$PATH:$HOME/.cabal/bin"
 
 ## additional userful functions
 # auto change directory
