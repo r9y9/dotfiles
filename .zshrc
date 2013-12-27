@@ -202,6 +202,9 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 
+## Go home
+alias gh="cd $GOPATH"
+
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
 # mac
