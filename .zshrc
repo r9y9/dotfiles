@@ -18,10 +18,14 @@ export PATH="$PATH:/usr/local/SPTK/bin"
 
 # Go
 export PATH="$PATH:/usr/local/go/bin"
+export GOROOT="/usr/local/go/"
 
 # Go workspace settings
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+
+# Go appengine SDK
+export PATH="$PATH:$GOPATH/go_appengine"
 
 # Haskell
 export PATH="$PATH:$HOME/.cabal/bin"
