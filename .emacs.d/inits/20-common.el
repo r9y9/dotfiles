@@ -29,3 +29,7 @@
 ;; flymake-go
 (eval-after-load "go-mode"
   '(require 'flymake-go))
+
+;; clang-format
+(load "clang-format.el")
+(global-set-key  (kbd "<f12>") 'clang-format-region)
