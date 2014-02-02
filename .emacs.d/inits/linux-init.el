@@ -1,1 +1,1 @@
-(set-face-attribute 'default nil :family "Ricty" :height 105)
+(set-face-attribute 'default nil :family "Ricty" :height 90)
