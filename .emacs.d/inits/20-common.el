@@ -30,6 +30,11 @@
 (eval-after-load "go-mode"
   '(require 'flymake-go))
 
+;; go-autocomplete
+(eval-after-load "go-mode"
+  '(progn
+     (require 'go-autocomplete)))
+
 ;; clang-format
 (load "clang-format.el")
 (global-set-key  (kbd "<f12>") 'clang-format-region)
