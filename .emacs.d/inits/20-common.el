@@ -35,6 +35,9 @@
   '(progn
      (require 'go-autocomplete)))
 
+;; gofmt
+(add-hook 'before-save-hook #'gofmt-before-save)
+
 ;; clang-format
 (load "clang-format.el")
 (global-set-key  (kbd "<f12>") 'clang-format-region)
