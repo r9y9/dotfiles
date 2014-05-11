@@ -30,6 +30,10 @@ export PATH="$PATH:$GOPATH/go_appengine"
 # Haskell
 export PATH="$PATH:$HOME/.cabal/bin"
 
+# PyLearn2
+export PYLEARN2_DATA_PATH=$HOME/data
+export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
+
 ## additional userful functions
 # auto change directory
 setopt auto_cd
