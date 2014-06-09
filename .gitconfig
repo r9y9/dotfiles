@@ -10,3 +10,5 @@
 	br = branch
 	df = diff
 	lg = log -p
+[push]
+	default = simple
