@@ -3,6 +3,9 @@
 	email = zryuichi@gmail.com
 [core]
 	editor = emacs -nw
+
+[github]
+	user = r9y9
 [alias]
 	co = checkout
 	ci = commit
