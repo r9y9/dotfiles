@@ -1,5 +1,5 @@
 ;; for emacs 24
-(add-to-list 'load-path "~/.emacs.d/elpa/init-loader-20130218.1210")
+(add-to-list 'load-path "~/.emacs.d/elpa/init-loader")
 (require 'init-loader)
 
 (add-to-list 'load-path "~/.emacs.d/manually_installed")
