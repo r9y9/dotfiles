@@ -41,3 +41,6 @@
 ;; clang-format
 (load "clang-format.el")
 (global-set-key  (kbd "<f12>") 'clang-format-region)
+
+;; julia
+(require 'julia-mode)
