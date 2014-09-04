@@ -10,3 +10,6 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 # path
 export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
 export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
+
+# less with syntax highlight
+alias less="/usr/share/vim/vim73/macros/less.sh"
