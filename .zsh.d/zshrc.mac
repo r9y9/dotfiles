@@ -13,3 +13,6 @@ export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
 
 # less with syntax highlight
 alias less="/usr/share/vim/vim73/macros/less.sh"
+
+# Python 2.7
+PYTHONPATH=/Library/Python/2.7/site-packages:/usr/local/lib/python2.7/site-packages/
