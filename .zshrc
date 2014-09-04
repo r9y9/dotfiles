@@ -161,7 +161,7 @@ precmd () {
 VCS_PROMPT_INFO="%1(v|%F{green}%1v%f|)"
 
 # left prompt
-ZSH_PREFIX_CHAR="☁"
+ZSH_PREFIX_CHAR="🍺"
 ZSH_PREFIX="%{$fg_bold[cyan]%}${ZSH_PREFIX_CHAR} %{${reset_color}%}"
 PROMPT=""
 PROMPT+="%{$fg_bold[white]%}[%{$fg_bold[green]%}%n%{${reset_color}%}"
