@@ -167,7 +167,7 @@ PROMPT=""
 PROMPT+="%{$fg_bold[white]%}[%{$fg_bold[green]%}%n%{${reset_color}%}"
 PROMPT+="%{$fg_bold[white]%}@%{${reset_color}%}"
 PROMPT+="%{$fg_bold[cyan]%}%m%{$fg_bold[white]%}] %{${reset_color}%}"
-PROMPT+="%{$fg[cyan]%}%c %{${reset_color}%}"
+PROMPT+="%{$fg[cyan]%}%/ %{${reset_color}%}"
 PROMPT+="%{$fg_bold[white]%}%% %{${reset_color}%}"
 
 # right prompt
