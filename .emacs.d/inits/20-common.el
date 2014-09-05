@@ -5,10 +5,8 @@
 (setq ac-auto-start t)
 
 ;; helm
-(when (display-graphic-p)
-  (require 'helm-config)
-  (helm-mode 1)
-)
+(require 'helm-config)
+(helm-mode 1)
 
 ;; YASnippet
 ;; load YASnippet expect for no-window mode
