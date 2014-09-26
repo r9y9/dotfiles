@@ -209,6 +209,7 @@ alias  l="ls -l"
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
+alias gl="git pull"
 
 ## Go home
 alias gh="cd $GOPATH"
