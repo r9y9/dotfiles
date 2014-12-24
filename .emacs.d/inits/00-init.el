@@ -1,8 +1,4 @@
-;; for emacs 24
-;; ubuntu:
-;; $ sudo apt-get install emacs24
-
-;; Default font 
+;; Default font
 (set-face-attribute 'default nil :family "Ricty" :height 105)
 
 ;; package control
@@ -18,3 +14,6 @@
 ;; linum-mode
 (global-linum-mode 1)
 (setq linum-format "%4d ")
+
+;; Delete trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
