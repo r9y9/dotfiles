@@ -5,7 +5,8 @@
 
 # aliases
 alias aquaemacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias emacsd='/Applications/Emacs.app/Contents/MacOS/Emacs -daemon'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 
 # path
 export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
@@ -15,4 +16,4 @@ export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
 alias less="/usr/share/vim/vim73/macros/less.sh"
 
 # Python 2.7
-export PYTHONPATH=/Library/Python/2.7/site-packages:/usr/local/lib/python2.7/site-packages/
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/Library/Python/2.7/site-packages
