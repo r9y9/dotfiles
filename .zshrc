@@ -229,8 +229,8 @@ esac
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Percol
-[ -f ${HOME}/.zsh.d/percol.zshrc ] && source ${HOME}/.zsh.d/percol.zshrc
+# Peco
+[ -f ${HOME}/.zsh.d/peco.zshrc ] && source ${HOME}/.zsh.d/peco.zshrc
 
 # Anaconda
 export PATH="$HOME/anaconda/bin:$PATH"
