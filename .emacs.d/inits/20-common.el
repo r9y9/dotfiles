@@ -55,3 +55,6 @@
 (add-hook 'before-save-hook 'py-autopep8-before-save)
 
 (setq py-autopep8-options '("--max-line-length=80"))
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
