@@ -1,3 +1,10 @@
+;; flymake
+(eval-after-load 'flymake '(require 'flymake-cursor))
+
+;; pyflakes
+(require 'flymake-python-pyflakes)
+(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+
 ;; auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
@@ -42,3 +49,9 @@
 
 ;; julia
 (require 'julia-mode)
+
+;; Python
+(require 'py-autopep8)
+(add-hook 'before-save-hook 'py-autopep8-before-save)
+
+(setq py-autopep8-options '("--max-line-length=80"))
