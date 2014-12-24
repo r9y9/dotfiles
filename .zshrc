@@ -10,25 +10,25 @@ case ${UID} in
 esac
 
 # Local path settings
-export PATH="$PATH:$HOME/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+export PATH="$HOME/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH"
 
 # SPTK speech signal processing toolkit
-export PATH="$PATH:/usr/local/SPTK/bin"
+export PATH="/usr/local/SPTK/bin:$PATH"
 
 # Go
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="/usr/local/go/bin:$PATH"
 export GOROOT="/usr/local/go/"
 
 # Go workspace settings
 export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$GOPATH/bin:$PATH"
 
 # Go appengine SDK
-export PATH="$PATH:$GOPATH/go_appengine"
+export PATH="$GOPATH/go_appengine:$PATH"
 
 # Haskell
-export PATH="$PATH:$HOME/.cabal/bin"
+export PATH="$HOME/.cabal/bin:$PATH"
 
 # PyLearn2
 export PYLEARN2_DATA_PATH=$HOME/data
@@ -192,7 +192,7 @@ PROMPT="${ZSH_PREFIX} ${PROMPT}"
 alias where="command -v"
 alias j="jobs -l"
 
-# ls with color 
+# ls with color
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
