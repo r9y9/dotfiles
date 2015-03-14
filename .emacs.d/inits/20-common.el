@@ -49,6 +49,7 @@
 
 ;; julia
 (require 'julia-mode)
+(add-hook 'julia-mode-hook 'auto-complete-mode)
 
 ;; Python
 (require 'py-autopep8)
