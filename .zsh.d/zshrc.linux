@@ -2,3 +2,8 @@
 
 alias apd="sudo apt-get update && sudo apt-get upgrade -y"
 alias open="xdg-open"
+
+alias emacsd='/usr/bin/emacs -daemon'
+alias emacs='/usr/bin/emacsclient'
+
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages:$HOME/anaconda/lib/python2.7/site-packages
