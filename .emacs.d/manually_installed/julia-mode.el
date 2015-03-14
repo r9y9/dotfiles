@@ -159,7 +159,8 @@ This function provides equivalent functionality, but makes no efforts to optimis
               (not (any "(" ")"))))
       ")"
       (* space)
-      "="))
+      "="
+      (not (any "="))))
 
 (defconst julia-type-regex
   (rx symbol-start (or "immutable" "type" "abstract") (1+ space) (group (1+ (or word (syntax symbol))))))
@@ -3093,6 +3094,63 @@ end"))
 (puthash "\\mttseven" "𝟽" julia-latexsubs)
 (puthash "\\mtteight" "𝟾" julia-latexsubs)
 (puthash "\\mttnine" "𝟿" julia-latexsubs)
+
+;; Code for `inferior-julia-mode'
+(require 'comint)
+
+(defgroup julia
+  '()
+  "Julia Programming Language."
+  :group 'languages
+  :prefix "julia-")
+
+(defcustom julia-program "julia"
+  "Path to the program used by `inferior-julia'."
+  :type 'string
+  :group 'julia)
+
+(defcustom julia-arguments '()
+  "Commandline arguments to pass to `julia-program'."
+  :type 'string
+  :group 'julia)
+
+(defvar julia-prompt-regexp "julia>"
+  "Regexp for matching `inferior-julia' prompt.")
+
+(defvar inferior-julia-mode-map
+  (let ((map (nconc (make-sparse-keymap) comint-mode-map)))
+    ;; example definition
+    (define-key map (kbd "TAB") 'julia-latexsub-or-indent)
+    map)
+  "Basic mode map for `inferior-julia-mode'.")
+
+;;;###autoload
+(defun inferior-julia ()
+    "Run an inferior instance of `julia' inside Emacs."
+    (interactive)
+    (let ((julia-program julia-program)
+          (buffer (get-buffer-create "*Julia*")))
+      (when (not (comint-check-proc "*Julia*"))
+            (apply #'make-comint-in-buffer "Julia" "*Julia*" julia-program julia-arguments))
+      (pop-to-buffer-same-window "*Julia*")
+      (inferior-julia-mode)))
+
+(defun inferior-julia--initialize ()
+    "Helper function to initialize `inferior-julia'."
+    (setq comint-use-prompt-regexp t))
+
+(define-derived-mode inferior-julia-mode comint-mode "Julia"
+  "Major mode for `inferior-julia'.
+
+\\<inferior-julia-mode-map>"
+  nil "Julia"
+  (setq comint-prompt-regexp julia-prompt-regexp)
+  (setq comint-prompt-read-only t)
+  (set (make-local-variable 'font-lock-defaults) '(julia-font-lock-keywords t))
+  (set (make-local-variable 'paragraph-start) julia-prompt-regexp)
+  (set (make-local-variable 'indent-line-function) 'julia-indent-line))
+
+(add-hook 'inferior-julia-mode-hook 'inferior-julia--initialize)
 
 (provide 'julia-mode)
 
