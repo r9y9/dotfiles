@@ -215,6 +215,9 @@ alias gl="git pull"
 ## Go home
 alias gh="cd $GOPATH"
 
+## Dropbox home
+alias gd="cd $HOME/Dropbox"
+
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
 # mac
@@ -233,7 +236,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f ${HOME}/.zsh.d/peco.zshrc ] && source ${HOME}/.zsh.d/peco.zshrc
 
 # Anaconda
-export PATH="$HOME/anaconda/bin:$PATH"
+# export PATH="$HOME/anaconda/bin:$PATH"
 
 #
 # Goolge Search by Google Chrome
