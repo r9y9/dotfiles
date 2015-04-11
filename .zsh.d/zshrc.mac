@@ -16,4 +16,4 @@ export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
 alias less="/usr/share/vim/vim73/macros/less.sh"
 
 # Python 2.7
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:/Library/Python/2.7/site-packages
+export PYTHONPATH=$HOME/anaconda/lib/python2.7/site-packages

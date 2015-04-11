@@ -236,7 +236,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [ -f ${HOME}/.zsh.d/peco.zshrc ] && source ${HOME}/.zsh.d/peco.zshrc
 
 # Anaconda
-# export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
 
 #
 # Goolge Search by Google Chrome
