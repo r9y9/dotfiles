@@ -129,6 +129,21 @@ NeoBundle "Shougo/vimproc", {
      \   "unix"      : "make -f make_unix.mak",
      \ }}
 
+
+NeoBundleLazy "Shougo/unite.vim", {
+\   'autoload' : {
+\       'commands' : [ "Unite" ]
+\   }
+\}
+
+
+NeoBundleLazy 'Shougo/vimfiler', {
+\   'depends' : ["Shougo/unite.vim"],
+\   'autoload' : {
+\       'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer" ]
+\   }
+\}
+
 " 三種の神器
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/Align'
