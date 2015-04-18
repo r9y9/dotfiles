@@ -1,4 +1,5 @@
 ;; Default font
+
 (set-face-attribute 'default nil :family "Ricty" :height 105)
 
 ;; package control
@@ -17,3 +18,7 @@
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; DO NOT create backup files
+(setq make-backup-files nil)
+(setq auto-save-default nil)
