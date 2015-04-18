@@ -6,6 +6,14 @@ set hlsearch            " 検索マッチテキストをハイライト (2013-07
 set autoindent
 syntax on
 
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+set showtabline=2
+set noshowmode
+
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'"
