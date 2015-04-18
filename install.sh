@@ -12,6 +12,7 @@ files=(
     ".tmux.d"
     ".zsh.d"
     ".zshrc"
+    ".vimrc"
 )
 
 function replace_dotfiles() {
