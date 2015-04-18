@@ -192,11 +192,14 @@ NeoBundleLazy 'fatih/vim-go',{
 
 NeoBundle 'JuliaLang/julia-vim'
 
+NeoBundleLazy 'mattn/benchvimrc-vim', {
+    \ 'autoload': {
+    \   'commands': ['BenchVimrc'],
+    \  }}
+
 call neobundle#end()
 
 " Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
