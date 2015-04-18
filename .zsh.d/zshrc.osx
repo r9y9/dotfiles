@@ -1,0 +1,46 @@
+# OSX-specific settings
+
+# aliases
+alias aquaemacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
+alias emacsd='/Applications/Emacs.app/Contents/MacOS/Emacs -daemon'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+
+# path
+export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
+export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
+
+# less with syntax highlight
+alias less="/usr/share/vim/vim73/macros/less.sh"
+
+# Python 2.7
+export PYTHONPATH=$HOME/anaconda/lib/python2.7/site-packages
+
+#
+# Goolge Search by Google Chrome
+# terminalからググったりqiita検索をできる
+#
+google() {
+    local str opt
+    if [ $# != 0 ]; then
+	for i in $*; do
+	    # $strが空じゃない場合、検索ワードを+記号でつなぐ(and検索)
+	    str="$str${str:++}$i"
+	done
+	opt='search?num=100'
+	opt="${opt}&q=${str}"
+    fi
+    open -a Google\ Chrome http://www.google.co.jp/$opt
+}
+
+qiita() {
+    local str opt
+    if [ $# != 0 ]; then
+	for i in $*; do
+	    # $strが空じゃない場合、検索ワードを+記号でつなぐ(and検索)
+	    str="$str${str:++}$i"
+	done
+	opt='search?num=100'
+	opt="${opt}&q=${str}"
+    fi
+    open -a Google\ Chrome http://qiita.com/$opt
+}

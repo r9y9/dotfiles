@@ -9,9 +9,11 @@ case ${UID} in
     ;;
 esac
 
+# Add LLVM lib dir
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH"
+
 # Local path settings
 export PATH="$HOME/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH"
 
 # SPTK speech signal processing toolkit
 export PATH="/usr/local/SPTK/bin:$PATH"
@@ -24,9 +26,6 @@ export GOROOT="/usr/local/go/"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
-# Go appengine SDK
-export PATH="$GOPATH/go_appengine:$PATH"
-
 # Haskell
 export PATH="$HOME/.cabal/bin:$PATH"
 
@@ -34,7 +33,12 @@ export PATH="$HOME/.cabal/bin:$PATH"
 export PYLEARN2_DATA_PATH=$HOME/data
 export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
 
-## additional userful functions
+# Anaconda
+export PATH="$HOME/anaconda/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
@@ -85,14 +89,14 @@ bindkey '5C' emacs-forward-word
 export WORDCHARS=""
 
 ## command history configuration
-HISTFILE=${HOME}/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
 ## completion configuration
-fpath=(${HOME}/.zsh/functions/Completion ${fpath})
+fpath=($HOME/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit
 
@@ -218,52 +222,42 @@ alias gh="cd $GOPATH"
 ## Dropbox home
 alias gd="cd $HOME/Dropbox"
 
+# Peco
+[ -f $HOME/.zsh.d/peco.zshrc ] && source $HOME/.zsh.d/peco.zshrc
+
+# syntax highlighting
+if [ -f $HOME/.zsh-syntax-highlihghting/zsh-syntax-highlighting.zsh ]
+then
+    source $HOME/.zsh-syntax-highlihghting/zsh-syntax-highlighting.zsh
+fi
+
+## Setup zsh-autosuggestions
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+
+if [ -f $HOME/.zsh-autosuggestions/autosuggestions.zsh ]
+then
+    source $HOME/.zsh-autosuggestions/autosuggestions.zsh
+
+    zle -N zle-line-init
+
+    # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+    # zsh-autosuggestions is designed to be unobtrusive)
+    bindkey '^T' autosuggest-toggle
+
+    # Accept suggestions without leaving insert mode
+    bindkey '^f' vi-forward-word
+fi
+
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
-# mac
 darwin*)
-    [ -f ${HOME}/.zsh.d/zshrc.mac ] && source ${HOME}/.zsh.d/zshrc.mac
+    [ -f $HOME/.zsh.d/zshrc.mac ] && source $HOME/.zsh.d/zshrc.osx
     ;;
 linux*)
-    [ -f ${HOME}/.zsh.d/zshrc.linux ] && source ${HOME}/.zsh.d/zshrc.linux
+    [ -f $HOME/.zsh.d/zshrc.linux ] && source $HOME/.zsh.d/zshrc.linux
     ;;
 esac
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Peco
-[ -f ${HOME}/.zsh.d/peco.zshrc ] && source ${HOME}/.zsh.d/peco.zshrc
-
-# Anaconda
-export PATH="$HOME/anaconda/bin:$PATH"
-
-#
-# Goolge Search by Google Chrome
-# terminalからググったりqiita検索をできる
-#
-google() {
-    local str opt
-    if [ $# != 0 ]; then
-	for i in $*; do
-	    # $strが空じゃない場合、検索ワードを+記号でつなぐ(and検索)
-	    str="$str${str:++}$i"
-	done
-	opt='search?num=100'
-	opt="${opt}&q=${str}"
-    fi
-    open -a Google\ Chrome http://www.google.co.jp/$opt
-}
-
-qiita() {
-    local str opt
-    if [ $# != 0 ]; then
-	for i in $*; do
-	    # $strが空じゃない場合、検索ワードを+記号でつなぐ(and検索)
-	    str="$str${str:++}$i"
-	done
-	opt='search?num=100'
-	opt="${opt}&q=${str}"
-    fi
-    open -a Google\ Chrome http://qiita.com/$opt
-}
