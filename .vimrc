@@ -1,13 +1,17 @@
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endi
+
+" or, invoked as 'git difftool'
+if exists('$SUDO_USER') || exists('$GIT_DIR')
+  finish
+endif
+
 set t_Co=256
 
 " remove toolvar for gvim
 if has('gui_running')
     set guioptions -=T
 endif
-
-syntax on
-colorscheme molokai
-highlight Normal ctermbg=none
 
 set ignorecase          " 大文字小文字を区別しない
 set smartcase           " 検索文字に大文字がある場合は大文字小文字を区別
@@ -98,9 +102,6 @@ nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
 nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 
-" make, grep などのコマンド後に自動的にQuickFixを開く
-" autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
-"
 " QuickFixおよびHelpでは q でバッファを閉じる
 " autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
@@ -114,8 +115,6 @@ endif
 
 " NeoBundle
 "
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
 
 if has('vim_starting')
   if &compatible
@@ -158,6 +157,9 @@ NeoBundleLazy 'Shougo/vimfiler', {
 \       'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer" ]
 \   }
 \}
+
+" molokai
+NeoBundle 'tomasr/molokai'
 
 " 三種の神器
 NeoBundle 'tpope/vim-surround'
@@ -218,3 +220,7 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
+syntax on
+colorscheme molokai
+highlight Normal ctermbg=none

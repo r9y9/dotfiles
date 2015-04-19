@@ -228,10 +228,7 @@ alias gd="cd $HOME/Dropbox"
 [ -f $HOME/.zsh.d/peco.zshrc ] && source $HOME/.zsh.d/peco.zshrc
 
 # syntax highlighting
-if [ -f $HOME/.zsh-syntax-highlihghting/zsh-syntax-highlighting.zsh ]
-then
-    source $HOME/.zsh-syntax-highlihghting/zsh-syntax-highlighting.zsh
-fi
+source ~/.zsh.d/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Setup zsh-autosuggestions
 
@@ -240,19 +237,16 @@ zle-line-init() {
     zle autosuggest-start
 }
 
-if [ -f $HOME/.zsh-autosuggestions/autosuggestions.zsh ]
-then
-    source $HOME/.zsh-autosuggestions/autosuggestions.zsh
+source ~/.zsh.d/plugins/zsh-autosuggestions/autosuggestions.zsh
 
-    zle -N zle-line-init
+zle -N zle-line-init
 
-    # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-    # zsh-autosuggestions is designed to be unobtrusive)
-    bindkey '^T' autosuggest-toggle
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
 
-    # Accept suggestions without leaving insert mode
-    bindkey '^f' vi-forward-word
-fi
+# Accept suggestions without leaving insert mode
+bindkey '^f' vi-forward-word
 
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
