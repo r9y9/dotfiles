@@ -95,6 +95,8 @@ SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
+LISTMAX=1000
+
 ## completion configuration
 fpath=($HOME/.zsh/functions/Completion ${fpath})
 autoload -U compinit
