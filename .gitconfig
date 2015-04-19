@@ -2,7 +2,7 @@
 	name = Ryuichi YAMAMOTO
 	email = zryuichi@gmail.com
 [core]
-	editor = emacsclient -nw
+	editor = vim
 
 [github]
 	user = r9y9
