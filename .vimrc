@@ -1,10 +1,17 @@
-colorscheme desert
+set t_Co=256
+
+" remove toolvar for gvim
+set guioptions -=T
+
+syntax on
+colorscheme molokai
+highlight Normal ctermbg=none
+
 set ignorecase          " 大文字小文字を区別しない
 set smartcase           " 検索文字に大文字がある場合は大文字小文字を区別
 set incsearch           " インクリメンタルサーチ
 set hlsearch            " 検索マッチテキストをハイライト (2013-07-03 14:30 修正）
 set autoindent
-syntax on
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
