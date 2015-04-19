@@ -3,7 +3,7 @@ if !1 | finish | endi
 
 " or, invoked as 'git difftool'
 if exists('$SUDO_USER') || exists('$GIT_DIR')
-  finish
+    finish
 endif
 
 set t_Co=256
@@ -117,12 +117,12 @@ endif
 "
 
 if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+    if &compatible
+        set nocompatible               " Be iMproved
+    endif
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -136,27 +136,27 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " 'build'が指定されているのでインストール時に自動的に
 " 指定されたコマンドが実行され vimproc がコンパイルされる
 NeoBundle "Shougo/vimproc", {
-     \ "build": {
-     \   "windows"   : "make -f make_mingw32.mak",
-     \   "cygwin"    : "make -f make_cygwin.mak",
-     \   "mac"       : "make -f make_mac.mak",
-     \   "unix"      : "make -f make_unix.mak",
-     \ }}
+            \ "build": {
+            \   "windows"   : "make -f make_mingw32.mak",
+            \   "cygwin"    : "make -f make_cygwin.mak",
+            \   "mac"       : "make -f make_mac.mak",
+            \   "unix"      : "make -f make_unix.mak",
+            \ }}
 
 
 NeoBundleLazy "Shougo/unite.vim", {
-\   'autoload' : {
-\       'commands' : [ "Unite" ]
-\   }
-\}
+            \   'autoload' : {
+            \       'commands' : [ "Unite" ]
+            \   }
+            \}
 
 
 NeoBundleLazy 'Shougo/vimfiler', {
-\   'depends' : ["Shougo/unite.vim"],
-\   'autoload' : {
-\       'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer" ]
-\   }
-\}
+            \   'depends' : ["Shougo/unite.vim"],
+            \   'autoload' : {
+            \       'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer" ]
+            \   }
+            \}
 
 " molokai
 NeoBundle 'tomasr/molokai'
@@ -180,8 +180,8 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-    \ }
+            \ 'default' : ''
+            \ }
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplcache#undo_completion()
@@ -191,7 +191,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+    return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -202,17 +202,17 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-    \ "autoload": {"insert": 1}}
+            \ "autoload": {"insert": 1}}
 
 NeoBundleLazy 'fatih/vim-go',{
-    \ "autoload" : {"filetypes" : ["go"]}}
+            \ "autoload" : {"filetypes" : ["go"]}}
 
 NeoBundle 'JuliaLang/julia-vim'
 
 NeoBundleLazy 'mattn/benchvimrc-vim', {
-    \ 'autoload': {
-    \   'commands': ['BenchVimrc'],
-    \  }}
+            \ 'autoload': {
+            \   'commands': ['BenchVimrc'],
+            \  }}
 
 call neobundle#end()
 
