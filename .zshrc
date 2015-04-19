@@ -39,6 +39,9 @@ export PATH="$HOME/anaconda/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Cask
+export PATH="$HOME/.cask/bin:$PATH"
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
