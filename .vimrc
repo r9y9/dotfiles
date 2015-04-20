@@ -25,14 +25,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Powerline (a bit slower than vim-airline?)
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-" set laststatus=2
-" set showtabline=2
-" set noshowmode
-
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'"
@@ -150,9 +142,27 @@ NeoBundleLazy "Shougo/unite.vim", {
             \   }
             \}
 
-NeoBundle "bling/vim-airline"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+
+NeoBundle "tpope/vim-fugitive"
+NeoBundle "itchyny/lightline.vim"
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+            \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+            \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+            \ }
+            \ }
+
 set laststatus=2
 set showtabline=2
 set noshowmode
