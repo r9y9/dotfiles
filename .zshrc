@@ -254,7 +254,7 @@ bindkey '^f' vi-forward-word
 ## load environmental .zshrc configuration file
 case "${OSTYPE}" in
 darwin*)
-    [ -f $HOME/.zsh.d/zshrc.mac ] && source $HOME/.zsh.d/zshrc.osx
+    [ -f $HOME/.zsh.d/zshrc.osx ] && source $HOME/.zsh.d/zshrc.osx
     ;;
 linux*)
     [ -f $HOME/.zsh.d/zshrc.linux ] && source $HOME/.zsh.d/zshrc.linux
