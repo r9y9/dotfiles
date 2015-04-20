@@ -1,5 +1,5 @@
 " Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endi
+if !1 | finish | endif
 
 " or, invoked as 'git difftool'
 if exists('$SUDO_USER') || exists('$GIT_DIR')
