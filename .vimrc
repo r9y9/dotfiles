@@ -150,16 +150,9 @@ NeoBundleLazy "Shougo/unite.vim", {
             \   }
             \}
 
-
-NeoBundleLazy 'Shougo/vimfiler', {
-            \   'depends' : ["Shougo/unite.vim"],
-            \   'autoload' : {
-            \       'commands' : [ "VimFilerTab", "VimFiler", "VimFilerExplorer" ]
-            \   }
-            \}
-
 NeoBundle "bling/vim-airline"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
 set showtabline=2
 set noshowmode
