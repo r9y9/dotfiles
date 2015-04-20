@@ -1,0 +1,67 @@
+(source gnu)
+(source melpa)
+
+(depends-on "init-loader")
+(depends-on "helm")
+(depends-on "auto-complete")
+
+;; Theme
+(depends-on "sublime-themes")
+
+(depends-on "bind-key")
+(depends-on "cask")
+(depends-on "dash")
+(depends-on "drag-stuff")
+(depends-on "exec-path-from-shell")
+(depends-on "expand-region")
+(depends-on "f")
+(depends-on "flycheck")
+(depends-on "flycheck-cask")
+(depends-on "htmlize")
+(depends-on "idle-highlight-mode")
+(depends-on "magit")
+(depends-on "multiple-cursors")
+(depends-on "nyan-mode")
+(depends-on "pallet")
+(depends-on "popwin")
+(depends-on "prodigy")
+(depends-on "projectile")
+(depends-on "s")
+(depends-on "smartparens")
+(depends-on "smex")
+(depends-on "use-package")
+(depends-on "web-mode")
+(depends-on "yasnippet")
+
+(depends-on "flymake")
+(depends-on "flymake-cursor")
+(depends-on "flymake-easy")
+(depends-on "flymake-python-pyflakes")
+(depends-on "flymake-shell")
+
+;; Go
+(depends-on "go-autocomplete")
+(depends-on "go-errcheck")
+(depends-on "go-mode")
+(depends-on "go-snippets")
+
+;; Python
+(depends-on "jedi")
+(depends-on "py-autopep8")
+(depends-on "python-environment")
+ 
+;; Julia
+(depends-on "julia-mode")
+
+;; C++
+(depends-on "clang-format")
+
+(depends-on "concurrent")
+(depends-on "ctable")
+(depends-on "dash")
+(depends-on "deferred")
+(depends-on "json")
+(depends-on "php-mode")
+(depends-on "popup")
+(depends-on "powerline")
+(depends-on "zencoding-mode")

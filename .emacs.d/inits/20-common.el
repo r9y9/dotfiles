@@ -32,8 +32,8 @@
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
 ;; flymake-go
-(eval-after-load "go-mode"
-  '(require 'flymake-go))
+;; (eval-after-load "go-mode"
+;;  '(require 'flymake-go))
 
 ;; go-autocomplete
 (eval-after-load "go-mode"
