@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Install cask if it's not installed
 if [ ! -f ~/.cask/cask.el ]
 then
     echo "Install cask..."
@@ -8,3 +9,6 @@ else
     echo "Cask is already installed."
 fi
 
+# Install cask-managed packages
+cd ~/.emacs.d
+cask install
