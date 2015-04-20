@@ -12,10 +12,18 @@ if has('gui_running')
     set guioptions -=T
 endif
 
+set list
+set number
+set wrap
 set ignorecase          " 大文字小文字を区別しない
 set smartcase           " 検索文字に大文字がある場合は大文字小文字を区別
 set incsearch           " インクリメンタルサーチ
-set hlsearch            " 検索マッチテキストをハイライト (2013-07-03 14:30 修正）
+set hlsearch
+
+" NO backup files
+set nowritebackup
+set nobackup
+set noswapfile
 
 " indent
 set autoindent
@@ -23,12 +31,8 @@ set cindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set shiftround
 
-" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'"
-
-set shiftround          " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める
 set infercase           " 補完時に大文字小文字を区別しない
 set virtualedit=all     " カーソルを文字が存在しない部分でも動けるようにする
 set hidden              " バッファを閉じる代わりに隠す（Undo履歴を残すため）
@@ -36,21 +40,15 @@ set switchbuf=useopen   " 新しく開く代わりにすでに開いてあるバ
 set showmatch           " 対応する括弧などをハイライト表示する
 set matchtime=3         " 対応括弧のハイライト表示を3秒にする
 
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'"
+
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
 "
 " バックスペースでなんでも消せるようにする
 set backspace=indent,eol,start
-
-" Swapファイル？Backupファイル？前時代的すぎ
-" なので全て無効化する
-set nowritebackup
-set nobackup
-set noswapfile
-
-set list                " 不可視文字の可視化
-set number              " 行番号の表示
-set wrap                " 長いテキストの折り返し
 
 " 前時代的スクリーンベルを無効化
 set t_vb=
@@ -93,16 +91,8 @@ nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
 nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
 
-" QuickFixおよびHelpでは q でバッファを閉じる
-" autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
-
-" ~/.vimrc.localが存在する場合のみ設定を読み込む
-let s:local_vimrc = expand('~/.vimrc.local')
-if filereadable(s:local_vimrc)
-    execute 'source ' . s:local_vimrc
-endif
 
 " NeoBundle
 "
@@ -111,21 +101,15 @@ if has('vim_starting')
     if &compatible
         set nocompatible               " Be iMproved
     endif
-
-    " Required:
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" 非同期通信を可能にする
-" 'build'が指定されているのでインストール時に自動的に
-" 指定されたコマンドが実行され vimproc がコンパイルされる
+" Lazy loading
 NeoBundle "Shougo/vimproc", {
             \ "build": {
             \   "windows"   : "make -f make_mingw32.mak",
@@ -134,14 +118,7 @@ NeoBundle "Shougo/vimproc", {
             \   "unix"      : "make -f make_unix.mak",
             \ }}
 
-
-NeoBundleLazy "Shougo/unite.vim", {
-            \   'autoload' : {
-            \       'commands' : [ "Unite" ]
-            \   }
-            \}
-
-
+" Powerline-like status/tool-bar customization
 NeoBundle "tpope/vim-fugitive"
 NeoBundle "itchyny/lightline.vim"
 let g:lightline = {
@@ -166,13 +143,20 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
+" Color-scheme
 " molokai
 NeoBundle 'tomasr/molokai'
 
 " 三種の神器
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/YankRing.vim'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'vim-scripts/Align'
+" NeoBundle 'vim-scripts/YankRing.vim'
+
+NeoBundleLazy "Shougo/unite.vim", {
+            \   'autoload' : {
+            \       'commands' : [ "Unite" ]
+            \   }
+            \}
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
             \ "autoload": {"insert": 1}}
@@ -230,7 +214,9 @@ endif
 NeoBundleLazy 'fatih/vim-go',{
             \ "autoload" : {"filetypes" : ["go"]}}
 
-NeoBundle 'JuliaLang/julia-vim'
+au BufNewFile,BufRead *.jl setf julia
+NeoBundleLazy 'JuliaLang/julia-vim', {
+            \ "autoload" : {"filetypes" : ["julia"]}}
 
 NeoBundleLazy 'mattn/benchvimrc-vim', {
             \ 'autoload': {
@@ -239,7 +225,6 @@ NeoBundleLazy 'mattn/benchvimrc-vim', {
 
 call neobundle#end()
 
-" Required:
 filetype plugin indent on
 
 NeoBundleCheck
