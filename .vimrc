@@ -1,14 +1,13 @@
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
-" or, invoked as 'git difftool'
-if exists('$SUDO_USER') || exists('$GIT_DIR')
+if exists('$SUDO_USER')
     finish
 endif
 
 set t_Co=256
 
-" remove toolvar for gvim
+" remove toolbar for gvim
 if has('gui_running')
     set guioptions -=T
 endif
