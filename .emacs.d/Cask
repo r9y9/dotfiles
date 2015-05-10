@@ -58,6 +58,7 @@
 ;; Rust
 (depends-on "rust-mode")
 (depends-on "flycheck-rust")
+(depends-on "flymake-rust")
 
 ;; C++
 (depends-on "clang-format")

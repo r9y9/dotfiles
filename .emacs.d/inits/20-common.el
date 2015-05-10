@@ -62,6 +62,9 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
+(require 'flymake-rust)
+(add-hook 'rust-mode-hook 'flymake-rust-load)
+
 (setq py-autopep8-options '("--max-line-length=80"))
 
 (add-hook 'python-mode-hook 'jedi:setup)
