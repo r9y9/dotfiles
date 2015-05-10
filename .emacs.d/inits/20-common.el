@@ -53,7 +53,14 @@
 
 ;; Python
 (require 'py-autopep8)
-(add-hook 'before-save-hook 'py-autopep8-before-save)
+;; (add-hook 'before-save-hook 'py-autopep8-before-save)
+
+;; Rust
+(require 'rust-mode)
+(add-hook 'rust-mode-hook 'auto-complete-mode)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 (setq py-autopep8-options '("--max-line-length=80"))
 

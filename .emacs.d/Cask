@@ -39,6 +39,8 @@
 (depends-on "flymake-python-pyflakes")
 (depends-on "flymake-shell")
 
+(depends-on "quickrun")
+
 ;; Go
 (depends-on "go-autocomplete")
 (depends-on "go-errcheck")
@@ -49,9 +51,13 @@
 (depends-on "jedi")
 (depends-on "py-autopep8")
 (depends-on "python-environment")
- 
+
 ;; Julia
 (depends-on "julia-mode")
+
+;; Rust
+(depends-on "rust-mode")
+(depends-on "flycheck-rust")
 
 ;; C++
 (depends-on "clang-format")
