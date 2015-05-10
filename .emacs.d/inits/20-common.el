@@ -55,6 +55,11 @@
 (require 'py-autopep8)
 ;; (add-hook 'before-save-hook 'py-autopep8-before-save)
 
+(setq py-autopep8-options '("--max-line-length=80"))
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
+
 ;; Rust
 (require 'rust-mode)
 (add-hook 'rust-mode-hook 'auto-complete-mode)
@@ -64,8 +69,3 @@
 
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
-
-(setq py-autopep8-options '("--max-line-length=80"))
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)                 ; optional
