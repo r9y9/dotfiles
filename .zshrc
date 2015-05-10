@@ -26,6 +26,10 @@ export GOROOT="/usr/local/go/"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
+# Rust
+# racer (Rust Code Completion utility) needs to know the place of **src**
+export RUST_SRC_PATH="$HOME/rust/src"
+
 # Haskell
 export PATH="$HOME/.cabal/bin:$PATH"
 
@@ -41,6 +45,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
+
+# Torch (must be installed on top of home directory
+export PATH=$HOME/torch/install/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/torch/install/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$HOME/torch/install/lib:$DYLD_LIBRARY_PATH
 
 # auto change directory
 setopt auto_cd
