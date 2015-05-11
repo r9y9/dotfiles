@@ -69,3 +69,7 @@
 
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
+
+;; Lua
+(require 'lua-mode)
+(add-hook 'lua-mode-hook 'auto-complete-mode)

@@ -63,6 +63,9 @@
 ;; C++
 (depends-on "clang-format")
 
+;; Lua
+(depends-on "lua-mode")
+
 (depends-on "concurrent")
 (depends-on "ctable")
 (depends-on "dash")
