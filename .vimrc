@@ -214,9 +214,9 @@ endif
 NeoBundleLazy 'fatih/vim-go',{
             \ "autoload" : {"filetypes" : ["go"]}}
 
-au BufNewFile,BufRead *.jl setf julia
-NeoBundleLazy 'JuliaLang/julia-vim', {
-            \ "autoload" : {"filetypes" : ["julia"]}}
+" au BufNewFile,BufRead *.jl setf julia
+" NeoBundleLazy 'JuliaLang/julia-vim', {
+"            \ "autoload" : {"filetypes" : ["julia"]}}
 
 NeoBundleLazy 'mattn/benchvimrc-vim', {
             \ 'autoload': {
