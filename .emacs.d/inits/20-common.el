@@ -46,6 +46,9 @@
 ;; clang-format
 (load "clang-format.el")
 (global-set-key  (kbd "<f12>") 'clang-format-region)
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (add-hook 'before-save-hook 'clang-format-buffer nil t)))
 
 ;; julia
 (require 'julia-mode)
@@ -53,7 +56,7 @@
 
 ;; Python
 (require 'py-autopep8)
-;; (add-hook 'before-save-hook 'py-autopep8-before-save)
+(add-hook 'before-save-hook 'py-autopep8-before-save)
 
 (setq py-autopep8-options '("--max-line-length=80"))
 
