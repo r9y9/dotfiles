@@ -63,6 +63,9 @@
 ;; C++
 (depends-on "clang-format")
 
+;; Haskell
+(depends-on "haskell-mode")
+
 ;; Lua
 (depends-on "lua-mode")
 

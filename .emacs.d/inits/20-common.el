@@ -70,6 +70,10 @@
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
 
+;; Haskell
+(require 'haskell-mode)
+(add-hook 'haskell-mode-hook 'auto-complete-mode)
+
 ;; Lua
 (require 'lua-mode)
 (add-hook 'lua-mode-hook 'auto-complete-mode)
