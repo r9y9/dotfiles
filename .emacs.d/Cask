@@ -51,6 +51,7 @@
 (depends-on "jedi")
 (depends-on "py-autopep8")
 (depends-on "python-environment")
+(depends-on "cython-mode")
 
 ;; Julia
 (depends-on "julia-mode")
