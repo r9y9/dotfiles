@@ -7,5 +7,3 @@ alias open="xdg-open"
 
 alias emacsd='/usr/bin/emacs -daemon'
 alias emacs='/usr/bin/emacsclient'
-
-export PYTHONPATH=$HOME/anaconda/lib/python2.7/site-packages
