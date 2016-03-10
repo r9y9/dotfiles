@@ -1,0 +1,4 @@
+# emacs 
+PATH="$PATH:/c/src/emacs-24.3/bin/"
+
+alias emacs="runemacs.exe"
