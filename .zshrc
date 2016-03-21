@@ -268,4 +268,7 @@ darwin*)
 linux*)
     [ -f $HOME/.zsh.d/zshrc.linux ] && source $HOME/.zsh.d/zshrc.linux
     ;;
+msys*)
+    [ -f $HOME/.zsh.d/zshrc.msys ] && source $HOME/.zsh.d/zshrc.msys
+    ;;
 esac
