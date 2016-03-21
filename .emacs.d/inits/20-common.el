@@ -63,6 +63,9 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)                 ; optional
 
+(require 'cython-mode)
+
+
 ;; Rust
 (require 'rust-mode)
 (add-hook 'rust-mode-hook 'auto-complete-mode)
