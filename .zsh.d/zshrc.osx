@@ -1,7 +1,4 @@
-# OSX-specific settings
-
 # aliases
-alias aquaemacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
 alias emacsd='/Applications/Emacs.app/Contents/MacOS/Emacs -daemon'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 
@@ -17,6 +14,18 @@ export OPENNI2_REDIST=/usr/local/lib/ni2
 
 # less with syntax highlight
 alias less="/usr/share/vim/vim73/macros/less.sh"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+    if [[ -f .nvmrc && -r .nvmrc ]]; then
+	nvm use
+    fi
+}
+add-zsh-hook chpwd load-nvmrc
 
 #
 # Goolge Search by Google Chrome
