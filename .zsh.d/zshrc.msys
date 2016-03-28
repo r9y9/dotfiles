@@ -2,3 +2,8 @@
 PATH="$PATH:/c/src/emacs-24.3/bin/"
 
 alias emacs="runemacs.exe"
+
+export GOROOT="/c/Go"
+
+# *** highest priority for mingw64 x86-64 toolchain ***
+PATH="/mingw64/bin:$PATH"
