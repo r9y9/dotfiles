@@ -1,9 +1,13 @@
-# emacs 
 PATH="$PATH:/c/src/emacs-24.3/bin/"
 
 alias emacs="runemacs.exe"
+alias open="explorer"
 
 export GOROOT="/c/Go"
+
+export PATH=/c/opencv-3.1.0/build/x64/vc12/bin:$PATH
+export PATH="/c/Program Files/7-Zip/:$PATH"
+
 
 # *** highest priority for mingw64 x86-64 toolchain ***
 PATH="/mingw64/bin:$PATH"
