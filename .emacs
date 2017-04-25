@@ -1,13 +1,4 @@
 ;;; emacs24 configuration file
-;;
-;; *Instruction for installing emacs24*
-;; :mint
-;; sudo apt-get install emacs24
-;;
-;; :ubuntu 12.04
-;; sudo add-apt-repository ppa:cassou/emacs
-;; sudo apt-get update
-;; sudo apt-get install emacs24
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
