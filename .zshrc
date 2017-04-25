@@ -9,16 +9,17 @@ case ${UID} in
     ;;
 esac
 
-# Add LLVM lib dir
-export LD_LIBRARY_PATH="/usr/local/lib:/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH"
-
 # Local path settings
 export PATH="$HOME/bin:$PATH"
+
+# CUDA
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 # SPTK speech signal processing toolkit
 export PATH="/usr/local/SPTK/bin:$PATH"
 
-# Go
+# Go (assumed that golang manually installed)
 export PATH="/usr/local/go/bin:$PATH"
 export GOROOT="/usr/local/go/"
 
@@ -33,23 +34,11 @@ export RUST_SRC_PATH="$HOME/rust/src"
 # Haskell
 export PATH="$HOME/.cabal/bin:$PATH"
 
-# PyLearn2
-export PYLEARN2_DATA_PATH=$HOME/data
-export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
-
 # Anaconda
-export PATH="$HOME/anaconda/bin:$PATH"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$HOME/anaconda/bin:$PATH"
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
-
-# Torch (must be installed on top of home directory
-export PATH=$HOME/torch/install/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/torch/install/lib:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$HOME/torch/install/lib:$DYLD_LIBRARY_PATH
 
 # auto change directory
 setopt auto_cd
@@ -244,14 +233,10 @@ source ~/.zsh.d/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Setup zsh-autosuggestions
 
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
-source ~/.zsh.d/plugins/zsh-autosuggestions/autosuggestions.zsh
-
-zle -N zle-line-init
+autosuggestions=~/.zsh.d/plugins/zsh-autosuggestions/autosuggestions.zsh
+if [ -e $autosuggestions ]; then
+    source $autosuggestions
+fi
 
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
