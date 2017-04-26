@@ -14,19 +14,29 @@ function check_requirement() {
     fi
 }
 
-function install_powerline() {
-    [ ! -f ~/.local/bin/powerline ] && pip install --user powerline-status
-}
-
-install_powerline
+[ ! -f ~/.local/bin/powerline ] && pip install --user powerline-status
 
 if [ ! -d ~/.src/powerline ];
 then
     mkdir -p ~/.src
     cd ~/.src/
     git clone https://github.com/powerline/powerline
+    cd -
+fi
+
+if [ ! -d ~/.src/fonts ];
+then
+    mkdir -p ~/.src
+    cd ~/.src/
+    git clone https://github.com/powerline/fonts
+    cd -
 fi
 
 cd ~/.src/powerline
 git checkout 2.5.2
+cd -
+
+# Patched powerline fonts
+cd ~/.src/fonts
+./install.sh
 cd -
