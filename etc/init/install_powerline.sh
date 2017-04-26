@@ -19,3 +19,14 @@ function install_powerline() {
 }
 
 install_powerline
+
+if [ ! -d ~/.src/powerline ];
+then
+    mkdir -p ~/.src
+    cd ~/.src/
+    git clone https://github.com/powerline/powerline
+fi
+
+cd ~/.src/powerline
+git checkout 2.5.2
+cd -
