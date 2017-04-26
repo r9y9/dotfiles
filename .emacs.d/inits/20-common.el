@@ -13,19 +13,17 @@
 
 ;; helm
 (require 'helm-config)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 (helm-mode 1)
 
 ;; YASnippet
-;; load YASnippet expect for no-window mode
-(when (display-graphic-p)
-  (add-to-list 'load-path "~/.emacs.d/yasnippet")
-  (require 'yasnippet)
-  (setq yas-snippet-dirs
-	'("~/.emacs.d/snippets"            ;; personal snippets
-	  "~/.emacs.d/elpa/yasnippet/snippets"  ;; the default collection
-	  ))
-  (yas-global-mode 1)
-)
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"            ;; personal snippets
+	))
+(yas-global-mode 1)
 
 ;; zencoding (called with C-j in default)
 (require 'zencoding-mode)

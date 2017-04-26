@@ -1,7 +1,3 @@
-;; Default font
-
-(set-face-attribute 'default nil :family "Ricty" :height 105)
-
 ;; package control
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
