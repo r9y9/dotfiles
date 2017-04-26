@@ -10,14 +10,15 @@ case ${UID} in
 esac
 
 # Local path settings
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
 
 # CUDA
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 
 # SPTK speech signal processing toolkit
-export PATH="/usr/local/SPTK/bin:$PATH"
+export PATH="$PATH:/usr/local/SPTK/bin"
 
 # Go (assumed that golang manually installed)
 export PATH="/usr/local/go/bin:$PATH"
@@ -35,7 +36,11 @@ export RUST_SRC_PATH="$HOME/rust/src"
 export PATH="$HOME/.cabal/bin:$PATH"
 
 # Anaconda
-export PATH="$HOME/anaconda3/bin:$HOME/anaconda/bin:$PATH"
+# NOTE: putting the anaconda path into the front would be problematic
+# in general (e.g, libraries will trying to search ~/anaconda3/lib/*.so
+# first, not /usr/lib/*.so)
+# need to manually `source activate root` to switch to the anaconda python
+export PATH="$PATH:$HOME/anaconda3/bin:$HOME/anaconda/bin"
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
@@ -224,6 +229,12 @@ alias gh="cd $GOPATH"
 
 ## Dropbox home
 alias gd="cd $HOME/Dropbox"
+
+# Start powerline daemon
+if [ -f $HOME/.local/bin/powerline-daemon ]; then
+    $HOME/.local/bin/powerline-daemon -q
+    . ~/.src/powerline/powerline/bindings/zsh/powerline.zsh
+fi
 
 # Peco
 [ -f $HOME/.zsh.d/peco.zshrc ] && source $HOME/.zsh.d/peco.zshrc
