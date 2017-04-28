@@ -45,6 +45,9 @@ export PATH="$PATH:$HOME/anaconda3/bin:$HOME/anaconda/bin"
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
 
+# MXNet
+export MXNET_HOME=$HOME/mxnet
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
