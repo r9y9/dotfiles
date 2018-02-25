@@ -1,2 +1,2 @@
-(set-face-attribute 'default nil :family "Roboto Mono Medium for Powerline" :height 113)
-(set-default-font "Roboto Mono Medium for Powerline")
+(set-face-attribute 'default nil :family "Noto Mono for Powerline" :height 98)
+(set-default-font "Noto Mono for Powerline")
