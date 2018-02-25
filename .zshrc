@@ -11,7 +11,9 @@ esac
 
 # Local path settings
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$PATH:$HOME/local/bin"
 export LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/local/lib"
 
 # CUDA
 export PATH="/usr/local/cuda/bin:$PATH"
