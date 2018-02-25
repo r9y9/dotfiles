@@ -271,3 +271,6 @@ msys*)
     [ -f $HOME/.zsh.d/zshrc.msys ] && source $HOME/.zsh.d/zshrc.msys
     ;;
 esac
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

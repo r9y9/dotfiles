@@ -10,7 +10,10 @@ export PATH="/opt/local/bin:/opt/local/sbin:${PATH}"
 export MANPATH="/opt/local/share/man:/opt/local/man:${MANPATH}"
 
 # less with syntax highlight
-alias less="/usr/share/vim/vim73/macros/less.sh"
+if [ -d /usr/share/vim/vim80 ];
+then
+   alias less="/usr/share/vim/vim80/macros/less.sh"
+fi
 
 #
 # Goolge Search by Google Chrome
