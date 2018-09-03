@@ -1,0 +1,2 @@
+# Anaconda path for Windows
+export PATH="$PATH:$HOME/Anaconda3/Scripts:$HOME/Anaconda3"
