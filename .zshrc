@@ -43,6 +43,7 @@ export PATH="$HOME/.cabal/bin:$PATH"
 # first, not /usr/lib/*.so)
 # need to manually `source activate root` to switch to the anaconda python
 export PATH="$PATH:$HOME/anaconda3/bin:$HOME/anaconda/bin"
+test -e ~/anaconda3/etc/profile.d/conda.sh && . ~/anaconda3/etc/profile.d/conda.sh
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
