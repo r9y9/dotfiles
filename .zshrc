@@ -276,5 +276,3 @@ msys*)
 esac
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export GREP_OPTIONS='--color=always'
