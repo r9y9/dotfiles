@@ -51,6 +51,9 @@ export PATH="$HOME/.cask/bin:$PATH"
 # MXNet
 export MXNET_HOME=$HOME/mxnet
 
+# Kaldi
+export KALDI_ROOT=$HOME/kaldi
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
