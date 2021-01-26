@@ -117,6 +117,7 @@ LISTMAX=1000
 
 ## completion configuration
 fpath=($HOME/.zsh/functions/Completion ${fpath})
+fpath+=$HOME/.zfunc
 autoload -U compinit
 compinit
 
