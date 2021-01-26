@@ -54,6 +54,9 @@ export MXNET_HOME=$HOME/mxnet
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
+# Kaldi
+export KALDI_ROOT=$HOME/kaldi
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
