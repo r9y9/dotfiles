@@ -51,6 +51,9 @@ export PATH="$HOME/.cask/bin:$PATH"
 # MXNet
 export MXNET_HOME=$HOME/mxnet
 
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # auto change directory
 setopt auto_cd
 function chpwd() { ls }
