@@ -216,7 +216,6 @@ PROMPT="${ZSH_PREFIX} ${PROMPT}"
 
 ## aliases
 alias where="command -v"
-alias j="jobs -l"
 
 # ls with color
 case "${OSTYPE}" in
@@ -235,13 +234,6 @@ alias  l="ls -l"
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
-alias gl="git pull"
-
-## Go home
-alias gh="cd $GOPATH"
-
-## Dropbox home
-alias gd="cd $HOME/Dropbox"
 
 # Start powerline daemon
 if [ -f $HOME/.local/bin/powerline-daemon ]; then
