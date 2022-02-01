@@ -1,5 +1,6 @@
 .emacs.d/kkcrc
 .emacs.d/session.*
+.secret*
 
 # Created by https://www.gitignore.io
 
