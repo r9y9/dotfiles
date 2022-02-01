@@ -301,3 +301,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Read secret file
+[ -f $HOME/.secret_env ] && source $HOME/.secret_env
