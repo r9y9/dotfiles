@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install --upgrade epc jedi argparse --user
+pip3 install --upgrade epc jedi argparse --user

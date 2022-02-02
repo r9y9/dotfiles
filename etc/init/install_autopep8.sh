@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip install autopep8 --user
+pip3 install autopep8 --user

@@ -14,7 +14,7 @@ function check_requirement() {
     fi
 }
 
-[ ! -f ~/.local/bin/powerline ] && pip install --user powerline-status
+[ ! -f ~/.local/bin/powerline ] && pip3 install --user powerline-status
 
 if [ ! -d ~/.src/powerline ];
 then
