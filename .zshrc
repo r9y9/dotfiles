@@ -52,7 +52,6 @@ export PATH="$HOME/.cask/bin:$PATH"
 export MXNET_HOME=$HOME/mxnet
 
 # Poetry
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # Kaldi
 export KALDI_ROOT=$HOME/kaldi
