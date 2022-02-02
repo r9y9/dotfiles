@@ -282,8 +282,8 @@ test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
 if ! ssh-add -l > /dev/null 2>&1; then
     ssh-agent > $SSH_AGENT_FILE
     source $SSH_AGENT_FILE
-    ssh-add $HOME/.ssh/gitdev_rsa
-    ssh-add $HOME/.ssh/github2_rsa
+    [ -f $HOME/.ssh/gitdev_rsa ] && ssh-add $HOME/.ssh/gitdev_rsa
+    [ -f $HOME/.ssh/github2_rsa ] && ssh-add $HOME/.ssh/github2_rsa
 fi
 
 
