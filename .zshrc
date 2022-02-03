@@ -246,6 +246,9 @@ alias su="su -l"
 if [ -f $HOME/.local/bin/powerline-daemon ]; then
     $HOME/.local/bin/powerline-daemon -q
     . ~/.src/powerline/powerline/bindings/zsh/powerline.zsh
+elif [ -f $HOME/Library/Python/3.9/bin/powerline-daemon ]; then
+    $HOME/Library/Python/3.9/bin/powerline-daemon -q
+    . ~/.src/powerline/powerline/bindings/zsh/powerline.zsh
 fi
 
 # Peco
