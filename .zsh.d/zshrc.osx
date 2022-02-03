@@ -50,3 +50,5 @@ qiita() {
     fi
     open -a Google\ Chrome http://qiita.com/$opt
 }
+
+source $HOME/.iterm2_shell_integration.zsh
