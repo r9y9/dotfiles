@@ -42,8 +42,16 @@ export PATH="$HOME/.cabal/bin:$PATH"
 # in general (e.g, libraries will trying to search ~/anaconda3/lib/*.so
 # first, not /usr/lib/*.so)
 # need to manually `source activate root` to switch to the anaconda python
-export PATH="$PATH:$HOME/anaconda3/bin:$HOME/anaconda/bin"
-test -e ~/anaconda3/etc/profile.d/conda.sh && . ~/anaconda3/etc/profile.d/conda.sh
+if [ -d $HOME/opt/anaconda3 ]; then
+    CONDA_ROOT=$HOME/opt/anaconda3
+elif [ -d $HOME/anaconda3 ]; then
+    CONDA_ROOT=$HOME/anaconda3
+else
+    CONDA_ROOT=$HOME/anaconda
+fi
+
+export PATH="$PATH:${CONDA_ROOT}/bin"
+test -e ${CONDA_ROOT}/etc/profile.d/conda.sh && . ${CONDA_ROOT}/etc/profile.d/conda.sh
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
@@ -288,14 +296,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('${CONDA_ROOT}/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "${CONDA_ROOT}/etc/profile.d/conda.sh" ]; then
+        . "${CONDA_ROOT}/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/anaconda3/bin:$PATH"
+        export PATH="${CONDA_ROOT}/bin:$PATH"
     fi
 fi
 unset __conda_setup
