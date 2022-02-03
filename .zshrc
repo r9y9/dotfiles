@@ -249,6 +249,9 @@ if [ -f $HOME/.local/bin/powerline-daemon ]; then
 elif [ -f $HOME/Library/Python/3.9/bin/powerline-daemon ]; then
     $HOME/Library/Python/3.9/bin/powerline-daemon -q
     . ~/.src/powerline/powerline/bindings/zsh/powerline.zsh
+    # NOTE: I don't know why `pip install --user powerline-status` will install
+    # binary to this place...
+    export PATH="$PATH:$HOME/Library/Python/3.9/bin/"
 fi
 
 # Peco
