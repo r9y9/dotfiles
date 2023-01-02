@@ -108,10 +108,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if type "direnv" > /dev/null; then
-    eval "$(direnv hook bash)"
-fi
-
 ## load environmental .bashrc configuration file
 case "${OSTYPE}" in
 # mac

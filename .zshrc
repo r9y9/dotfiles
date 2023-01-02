@@ -299,9 +299,6 @@ if ! ssh-add -l > /dev/null 2>&1; then
     [ -f $HOME/.ssh/github2_rsa ] && ssh-add $HOME/.ssh/github2_rsa
 fi
 
-if type "direnv" > /dev/null; then
-    eval "$(direnv hook zsh)"
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
