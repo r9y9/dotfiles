@@ -108,6 +108,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# For ssh-agent
+SSH_AGENT_FILE=$HOME/.ssh-agent
+test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
+if ! ssh-add -l > /dev/null 2>&1; then
+    ssh-agent > $SSH_AGENT_FILE
+    source $SSH_AGENT_FILE
+    [ -f $HOME/.ssh/gitdev_rsa ] && ssh-add $HOME/.ssh/gitdev_rsa
+    [ -f $HOME/.ssh/github2_rsa ] && ssh-add $HOME/.ssh/github2_rsa
+fi
+
 ## load environmental .bashrc configuration file
 case "${OSTYPE}" in
 # mac
