@@ -125,3 +125,4 @@ msys*)
     [ -f ${HOME}/.bashrc.msys ] && source ${HOME}/.bashrc.msys
     ;;
 esac
+. "$HOME/.cargo/env"

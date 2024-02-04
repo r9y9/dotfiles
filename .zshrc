@@ -291,6 +291,9 @@ esac
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# rust
+. "$HOME/.cargo/env"
+
 # For ssh-agent
 SSH_AGENT_FILE=$HOME/.ssh-agent
 test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE
