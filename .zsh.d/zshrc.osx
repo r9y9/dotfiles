@@ -5,6 +5,9 @@ export PATH=/usr/local/opt/icu4c/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/opt/icu4c/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/opt/homebrew/opt/icu4c/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:${PKG_CONFIG_PATH}
 
+# for building julia from source
+export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib/
+
 
 # aliases
 alias aquaemacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs'
